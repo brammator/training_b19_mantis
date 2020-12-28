@@ -1,0 +1,8 @@
+ipython
+selenium~=3.141.0
+pytest~=6.1.2
+pony~=0.7.14
+jsonpickle~=1.4.2
+setuptools
+wheel
+PyMySQL
