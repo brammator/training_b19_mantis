@@ -6,3 +6,4 @@ jsonpickle~=1.4.2
 setuptools
 wheel
 PyMySQL
+suds-jurko

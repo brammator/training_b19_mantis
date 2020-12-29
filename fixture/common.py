@@ -10,8 +10,8 @@ class Helper:
         self.app = app
         self.cache = None
 
-class WebDriverHelper(Helper):
 
+class WebDriverHelper(Helper):
     def fill_field(self, field, value, scope=None):
         if value is None:
             return

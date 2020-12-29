@@ -6,10 +6,13 @@
     "username": "administrator",
     "password": "root"
   },
-  "db" : {
-    "host" : "localhost",
-    "database" : "bugtracker",
-    "user" : "root",
-    "password" : ""
+  "db": {
+    "host": "localhost",
+    "database": "bugtracker",
+    "user": "root",
+    "password": ""
+  },
+  "soap": {
+    "wsdl": "/api/soap/mantisconnect.php?wsdl"
   }
 }

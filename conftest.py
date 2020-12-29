@@ -7,6 +7,7 @@ import pytest
 
 from fixture.application import Application
 from fixture.orm import ORMFixture
+from fixture.soap import SoapFixture
 
 fixture = None
 target = None
@@ -34,7 +35,6 @@ def app(request):
     config = load_config(request.config.getoption("--target"))
     if fixture is None or not fixture.is_valid():
         fixture = Application(browser=browser, config=config)
-    # fixture.session.ensure_logged(username=config['webadmin']["username"], password=config['webadmin']["password"])
     return fixture
 
 
@@ -43,6 +43,12 @@ def db(config):
     db_config = config["db"]
     dbfixture = ORMFixture(host=db_config["host"], database=db_config["database"], user=db_config["user"], password=db_config["password"])
     return dbfixture
+
+
+@pytest.fixture(scope="session")
+def soap(config):
+    soapfixture = SoapFixture(wsdl=config["web"]["base_url"] + config["soap"]["wsdl"], defaultconfig=config)
+    yield soapfixture
 
 
 @pytest.fixture
